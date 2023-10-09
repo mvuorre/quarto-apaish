@@ -1,17 +1,19 @@
-# Quarto-apaish Format
+# APA7ish Quarto templates
 
 ## Installing
 
-_TODO_: Replace the `<github-organization>` with your GitHub organization.
+Use quarto-apaish in an existing Quarto project
 
 ```bash
-quarto use template <github-organization>/quarto-apaish
+quarto add mvuorre/quarto-apaish
 ```
 
-This will install the format extension and create an example qmd file
-that you can use as a starting place for your document.
+Create a new Quarto project using quarto-apaish:
 
-## Using
+```bash
+quarto use template mvuorre/quarto-apaish
+```
 
-_TODO_: Describe how to use your format.
+## Templates:
 
+- Typst (PDF output): [source](template.qmd), [PDF](template.pdf)

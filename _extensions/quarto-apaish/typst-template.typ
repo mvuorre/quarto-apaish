@@ -16,7 +16,7 @@
   date: none,
   abstract: none,
   cols: 1,
-  margin: (x: 1.25in, y: 1.25in),
+  margin: (x: 1in, y: 1in),
   paper: "us-letter",
   lang: "en",
   region: "US",
@@ -24,6 +24,7 @@
   fontsize: 11pt,
   sectionnumbering: none,
   toc: false,
+  keywords: none,
   doc,
 ) = {
   set page(
@@ -52,9 +53,11 @@
       row-gutter: 1.5em,
       ..authors.map(author =>
           align(center)[
-            #author.name \
+            #text(weight: "semibold")[#author.name] \
             #author.affiliation \
-            #author.email
+            #author.email \
+            #author.orcid \
+            #author.url
           ]
       )
     )
@@ -67,8 +70,14 @@
   }
 
   if abstract != none {
-    block(inset: 2em)[
-    #text(weight: "semibold")[Abstract] #h(1em) #abstract
+    block(inset: 1em)[
+    #text(weight: "semibold")[Abstract.] #h(0.5em) #abstract
+    ]
+  }
+  
+  if keywords != none {
+    block(inset: 1em)[
+    #text(weight: "semibold")[Keywords.] #h(0.5em) #keywords
     ]
   }
 

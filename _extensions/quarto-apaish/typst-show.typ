@@ -21,8 +21,10 @@ $if(by-author)$
 $for(by-author)$
 $if(it.name.literal)$
     ( name: [$it.name.literal$],
-      affiliation: [$for(it.affiliations)$$it.name$$sep$, $endfor$],
-      email: [$it.email$] ),
+      affiliation: [$for(it.affiliations)$$it.name$$if(it.department)$, $it.department$$endif$$sep$\ $endfor$],
+      email: [$it.email$],
+      orcid: [$it.orcid$],
+      url: [$it.url$] ),
 $endif$
 $endfor$
     ),
@@ -38,6 +40,9 @@ $if(region)$
 $endif$
 $if(abstract)$
   abstract: [$abstract$],
+$endif$
+$if(keywords)$
+  keywords: [$keywords$],
 $endif$
 $if(margin)$
   margin: ($for(margin/pairs)$$margin.key$: $margin.value$,$endfor$),
