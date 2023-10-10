@@ -4,24 +4,24 @@ runninghead: APA7ish
 
 author:
   - name: Norah Jones
-    email: sm@example.org # email defines corresponding author
+    email: sm@example.org
     affiliation:
       - ref: a
       - ref: b
   - name: John Hamm
     affiliation:
       - ref: a
+
 affiliations:
   - id: a
     name: University A
   - id: b
     name: University B
     department: Some department
-    city: A City
-    country: A Country
 
 abstract: |
   This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
+
 keywords: "Quarto, template, APA, Typst, PDF"
 date: 2023-10-10
 authornote: |
@@ -38,7 +38,7 @@ format:
     fontsize: 10pt
     papersize: a4
     mainfont: Libertinus
-    section-numbering: "" # https://typst.app/docs/reference/meta/numbering/
+    section-numbering: ""
 ---
 
 # Introduction
