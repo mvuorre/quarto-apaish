@@ -40,24 +40,36 @@
             []
         } else {
             align(
-              left + horizon,
+              center + horizon,
               runninghead
             )
         }
     )
     
   )
-  set par(justify: true)
-  set text(lang: lang,
-           region: region,
-           font: font,
-           size: fontsize)
-  set heading(numbering: sectionnumbering)
+  
+  set par(
+    justify: true, 
+    leading: 0.55em
+  )
+  
+  set text(
+    lang: lang,
+    region: region,
+    font: font,
+    size: fontsize
+  )
+  
+  set heading(
+    numbering: sectionnumbering
+  )
 
   if title != none {
-    align(center)[#block(inset: 2em, below: 0em)[
-      #text(weight: "bold", size: 1.5em)[#title]
-    ]]
+    align(center)[
+      #block(inset: 2em, below: 0em)[
+        #text(weight: "bold", size: 1.5em)[#title]
+      ]
+    ]
   }
 
   if authors != none {

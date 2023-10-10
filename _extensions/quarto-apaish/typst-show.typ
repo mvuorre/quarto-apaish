@@ -16,15 +16,15 @@
 $if(title)$
   title: [$title$],
 $endif$
+
 $if(runninghead)$
   runninghead: [$runninghead$],
 $endif$
 
 $if(by-author)$
   authors: (
-$for(by-author)$
-$if(it.name.literal)$
-    ( name: [$it.name.literal$],
+    $for(by-author)$(
+      name: [$it.name.literal$],
       corresponding: [$it.corresponding$],
       affiliations: [
         $for(it.affiliations)$
@@ -35,20 +35,18 @@ $if(it.name.literal)$
       orcid: [$it.orcid$],
       url: [$it.url$] 
     ),
-$endif$
-$endfor$
-    ),
+    $endfor$
+  ),
 $endif$
 
 $if(affiliations)$
   affiliations: (
-    $for(affiliations)$
-      (id: [$it.id$],
-       name: [$it.name$],
-       department: [$it.department$],
-       string: [$if(it.department)$$it.department$\ $endif$$it.name$]),
+    $for(affiliations)$(
+      id: [$it.id$],
+      string: [$if(it.department)$$it.department$\ $endif$$it.name$]
+    ),
     $endfor$
-),
+  ),
 $endif$
 
 $if(date)$
