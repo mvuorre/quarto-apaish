@@ -21,6 +21,10 @@ $if(runninghead)$
   runninghead: [$runninghead$],
 $endif$
 
+$if(authornote)$
+  authornote: [$authornote$],
+$endif$
+
 $if(by-author)$
   authors: (
     $for(by-author)$(

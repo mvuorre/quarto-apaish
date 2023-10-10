@@ -16,6 +16,7 @@
   authors: none,
   affiliations: none,
   date: none,
+  authornote: none,
   abstract: none,
   cols: 1,
   margin: (x: 0.75in, y: 1.25in),
@@ -100,6 +101,9 @@
       ]} \
       #if date != none {[
         #text(weight: "regular", style: "italic")[Date:] #h(0.25em) #date
+      ]} \
+      #if authornote != none {[
+        #text(weight: "regular", style: "italic")[Author note:] #h(0.25em) #authornote
       ]}
     ]
   }
