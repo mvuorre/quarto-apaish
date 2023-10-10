@@ -24,6 +24,8 @@ abstract: |
   This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
 keywords: "Quarto, template, APA, Typst, PDF"
 date: 2023-10-10
+authornote: |
+  Can include info here, like "This pre-print is not yet peer-reviewed."
 
 bibliography: bibliography.bib  
 csl: apa.csl
