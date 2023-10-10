@@ -16,18 +16,43 @@
 $if(title)$
   title: [$title$],
 $endif$
+
+$if(runninghead)$
+  runninghead: [$runninghead$],
+$endif$
+
+$if(authornote)$
+  authornote: [$authornote$],
+$endif$
+
 $if(by-author)$
   authors: (
-$for(by-author)$
-$if(it.name.literal)$
-    ( name: [$it.name.literal$],
-      affiliation: [$for(it.affiliations)$$it.name$$if(it.department)$, $it.department$$endif$$sep$\ $endfor$],
-      email: [$it.email$],
-      orcid: [$it.orcid$],
-      url: [$it.url$] ),
-$endif$
-$endfor$
+    $for(by-author)$(
+      name: [$it.name.literal$],
+      corresponding: [
+        $if(it.email)$
+          #footnote[Corresponding author: $it.name.literal$, $it.email$.]
+        $endif$
+      ],
+      affiliations: [
+        $for(it.affiliations)$
+          $if(it.id)$$it.id$$endif$$sep$, 
+        $endfor$
+      ],
+      email: [$it.email$]
     ),
+    $endfor$
+  ),
+$endif$
+
+$if(affiliations)$
+  affiliations: (
+    $for(affiliations)$(
+      id: [$it.id$],
+      string: [$if(it.department)$$it.department$\ $endif$$it.name$]
+    ),
+    $endfor$
+  ),
 $endif$
 $if(date)$
   date: [$date$],
@@ -64,4 +89,45 @@ $if(toc)$
 $endif$
   cols: $if(columns)$$columns$$else$1$endif$,
   doc,
+)
+
+#show heading.where(
+  level: 1
+): it => block(width: 100%, below: 12pt)[
+  #set align(center)
+  #set text(1em, weight: "regular")
+  #strong(it.body)
+]
+
+#show heading.where(
+  level: 2
+): it => block(width: 100%, below: 12pt)[
+  #set align(left)
+  #set text(1em, weight: "bold")
+  #strong(it.body)
+]
+
+#show heading.where(
+  level: 3
+): it => block(width: 100%, below: 12pt)[
+  #set align(left)
+  #set text(1em, weight: "bold")
+  #emph(it.body)
+]
+
+#show heading.where(
+  level: 4
+): it => text(
+  size: 1em,
+  weight: "bold",
+  it.body + [.]
+)
+
+#show heading.where(
+  level: 5
+): it => text(
+  size: 1em,
+  weight: "bold",
+  style: "italic",
+  it.body + [.]
 )

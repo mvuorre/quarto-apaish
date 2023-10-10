@@ -12,11 +12,14 @@
 
 #let article(
   title: none,
+  runninghead: none,
   authors: none,
+  affiliations: none,
   date: none,
+  authornote: none,
   abstract: none,
   cols: 1,
-  margin: (x: 1in, y: 1in),
+  margin: (x: 0.75in, y: 1.25in),
   paper: "us-letter",
   lang: "en",
   region: "US",
@@ -27,57 +30,81 @@
   keywords: none,
   doc,
 ) = {
+
   set page(
     paper: paper,
     margin: margin,
     numbering: "1",
+    number-align: bottom + center,
+    header-ascent: 0%,
+    header: locate(
+        loc => if [#loc.page()] == [1] {
+            []
+        } else {
+            align(
+              center + horizon,
+              runninghead
+            )
+        }
+    ),
   )
-  set par(justify: true)
-  set text(lang: lang,
-           region: region,
-           font: font,
-           size: fontsize)
-  set heading(numbering: sectionnumbering)
+  
+  set par(
+    justify: true, 
+    leading: 0.55em
+  )
+  
+  set text(
+    lang: lang,
+    region: region,
+    font: font,
+    size: fontsize
+  )
+  
+  set heading(
+    numbering: sectionnumbering
+  )
 
   if title != none {
-    align(center)[#block(inset: 2em)[
-      #text(weight: "bold", size: 1.5em)[#title]
-    ]]
+    align(center)[
+      #block(inset: 2em, below: 0em)[
+        #text(weight: "bold", size: 1.5em)[#title]
+      ]
+    ]
   }
 
   if authors != none {
-    let count = authors.len()
-    let ncols = calc.min(count, 3)
-    grid(
-      columns: (1fr,) * ncols,
-      row-gutter: 1.5em,
-      ..authors.map(author =>
-          align(center)[
-            #text(weight: "semibold")[#author.name] \
-            #author.affiliation \
-            #author.email \
-            #author.orcid \
-            #author.url
-          ]
-      )
-    )
-  }
-
-  if date != none {
-    align(center)[#block(inset: 1em)[
-      #date
-    ]]
-  }
-
-  if abstract != none {
-    block(inset: 1em)[
-    #text(weight: "semibold")[Abstract.] #h(0.5em) #abstract
+    align(center)[
+      #block(inset: 10%, above: 0em, below: 0.5em)[
+        #for a in authors [
+          #text(weight: "medium", size: 1.25em)[#a.name]#super[#a.affiliations]#a.corresponding \
+        ]
+      ]
     ]
   }
   
-  if keywords != none {
-    block(inset: 1em)[
-    #text(weight: "semibold")[Keywords.] #h(0.5em) #keywords
+  if affiliations != none {
+    align(center)[
+      #block(inset: 10%, above: 0em, below: 0em)[
+        #for a in affiliations [
+          #super[#a.id] #a.string \
+        ]
+      ]
+    ]
+  }
+
+  if abstract != none {
+    block(inset: 10%, above: 0em, below: 2em)[
+      #abstract
+      #if keywords != none {[
+        #text(weight: "regular", style: "italic")[Keywords:] #h(0.25em) #keywords
+      ]} \
+      #if date != none {[
+        #text(weight: "regular", style: "italic")[Date:] #h(0.25em) #date
+      ]} \
+      #if authornote != none {[
+        #text(weight: "regular", style: "italic")[Author note:] #h(0.25em) #authornote
+      ]}
     ]
   }
 

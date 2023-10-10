@@ -1,57 +1,74 @@
 ---
-title: APA7-ish Quarto Typst PDF template
+title: APA7ish Quarto Typst PDF template
+runninghead: APA7ish
 
 author:
   - name: Norah Jones
-    orcid: 0000-0000-0000-0000
+    email: sm@example.org
     affiliation:
       - ref: a
       - ref: b
-    email: sm@example.org
-    url: https://example.org/
   - name: John Hamm
     affiliation:
       - ref: a
+
 affiliations:
   - id: a
     name: University A
   - id: b
     name: University B
     department: Some department
-    city: A City
-    country: A Country
 
 abstract: |
   This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
-keywords: "Template, APA, Typst, PDF"
+
+keywords: "Quarto, template, APA, Typst, PDF"
+date: 2023-10-10
+authornote: |
+  Can include info here, like "This pre-print is not yet peer-reviewed."
 
 bibliography: bibliography.bib  
-csl: https://www.zotero.org/styles/apa
+csl: apa.csl
 citeproc: true
 
 format:
   quarto-apaish-typst: 
     toc: false
     columns: 2
-    fontsize: 11pt
+    fontsize: 10pt
     papersize: a4
     mainfont: Libertinus
-    section-numbering: "" # https://typst.app/docs/reference/meta/numbering/
+    section-numbering: ""
 ---
 
 # Introduction
 
-This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
+This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
 
-## Markdown 
+## Level 2
 
-*Italics*, **bold**.
+Flush Left, Bold, Title Case Heading
 
-> Blockquotes
+### Level 3
+
+Flush Left, Bold Italic, Title Case Heading
+
+#### Level 4
+
+Indented, Bold, Title Case Heading, Ending With a Period. Text begins on the same line and continues as a regular paragraph.
+
+##### Level 5
+
+Indented, Bold Italic, Title Case Heading, Ending With a Period. Text begins on the same line and continues as a regular paragraph.
+
+## Markdown
+
+Markdown should be sufficient for formatting stuff: *Italics*, **bold**.
+
+> *Blockquotes*: This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
 
 - Lists
-
-1. Numbers
+  - Level 2 item
 
 # Methods
 
@@ -104,16 +121,19 @@ plot(mtcars[, 3:5])
 
 @fig-1 shows what happens if you run `plot(mtcars[, 3:5])` in R [@R].
 
+![Image of Thomas Bayes from <https://en.wikipedia.org/wiki/Thomas_Bayes>](Thomas_Bayes.jpg){#fig-bayes}
+
+You can also embed figures from files using Markdown syntax: `![Caption](Thomas_Bayes.jpg){#fig-bayes}` shows @fig-bayes.
+
 # Discussion
 
-This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. 
+This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
 
-This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. 
+This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
 
 # References
 
 ::: {#refs}
-
 :::
 
 # Appendices
