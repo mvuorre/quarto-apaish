@@ -17,7 +17,7 @@
   date: none,
   abstract: none,
   cols: 1,
-  margin: (x: 1in, y: 1in),
+  margin: (x: 0.75in, y: 0.75in),
   paper: "us-letter",
   lang: "en",
   region: "US",
@@ -77,21 +77,15 @@
     )
   }
 
-  if date != none {
-    align(center)[#block(inset: 1em)[
-      #date
-    ]]
-  }
-
   if abstract != none {
-    block(inset: 1em)[
-    #text(weight: "semibold")[Abstract.] #h(0.5em) #abstract
-    ]
-  }
-  
-  if keywords != none {
-    block(inset: 1em)[
-    #text(weight: "semibold")[Keywords.] #h(0.5em) #keywords
+    block(inset: 10%, below: 2em)[
+      #abstract
+      #if keywords != none {[
+        #text(weight: "regular", style: "italic")[Keywords:] #h(0.25em) #keywords
+      ]} \
+      #if date != none {[
+        #text(weight: "regular", style: "italic")[Date:] #h(0.25em) #date
+      ]}
     ]
   }
 
