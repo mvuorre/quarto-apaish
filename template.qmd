@@ -105,18 +105,20 @@ plot(mtcars[, 3:5])
 
 @fig-1 shows what happens if you run `plot(mtcars[, 3:5])` in R [@R].
 
+![Image of Thomas Bayes from <https://en.wikipedia.org/wiki/Thomas_Bayes>](Thomas_Bayes.jpg){#fig-bayes}
+
+You can also embed figures from files using Markdown syntax: `![Caption](Thomas_Bayes.jpg){#fig-bayes}` shows @fig-bayes.
+
 # Discussion
 
-This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. 
+This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
 
-This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. 
+This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
 
 # References
 
 ::: {#refs}
-
 :::
 
 # Appendices
 
-Additional information.
