@@ -29,6 +29,7 @@
   keywords: none,
   doc,
 ) = {
+
   set page(
     paper: paper,
     margin: margin,
@@ -44,8 +45,7 @@
               runninghead
             )
         }
-    )
-    
+    ),
   )
   
   set par(
@@ -76,7 +76,7 @@
     align(center)[
       #block(inset: 10%, above: 0em, below: 0.5em)[
         #for a in authors [
-          #text(weight: "medium", size: 1.25em)[#a.name]#super[#a.affiliations] \
+          #text(weight: "medium", size: 1.25em)[#a.name]#super[#a.affiliations]#a.corresponding \
         ]
       ]
     ]

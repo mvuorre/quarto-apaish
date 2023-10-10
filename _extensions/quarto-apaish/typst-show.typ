@@ -25,15 +25,17 @@ $if(by-author)$
   authors: (
     $for(by-author)$(
       name: [$it.name.literal$],
-      corresponding: [$it.corresponding$],
+      corresponding: [
+        $if(it.email)$
+          #footnote[Corresponding author: $it.name.literal$, $it.email$.]
+        $endif$
+      ],
       affiliations: [
         $for(it.affiliations)$
           $if(it.id)$$it.id$$endif$$sep$, 
         $endfor$
       ],
-      email: [$it.email$],
-      orcid: [$it.orcid$],
-      url: [$it.url$] 
+      email: [$it.email$]
     ),
     $endfor$
   ),
@@ -48,7 +50,6 @@ $if(affiliations)$
     $endfor$
   ),
 $endif$
-
 $if(date)$
   date: [$date$],
 $endif$

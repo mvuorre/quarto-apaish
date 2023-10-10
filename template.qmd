@@ -4,9 +4,7 @@ runninghead: APA7ish
 
 author:
   - name: Norah Jones
-    orcid: 0000-0000-0000-0000
-    email: sm@example.org
-    url: https://example.org/
+    email: sm@example.org # email defines corresponding author
     affiliation:
       - ref: a
       - ref: b
