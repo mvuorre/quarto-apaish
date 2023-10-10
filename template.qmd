@@ -5,11 +5,11 @@ runninghead: APA7ish
 author:
   - name: Norah Jones
     orcid: 0000-0000-0000-0000
+    email: sm@example.org
+    url: https://example.org/
     affiliation:
       - ref: a
       - ref: b
-    email: sm@example.org
-    url: https://example.org/
   - name: John Hamm
     affiliation:
       - ref: a
@@ -24,11 +24,11 @@ affiliations:
 
 abstract: |
   This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
-keywords: "Template, APA, Typst, PDF"
+keywords: "Quarto, template, APA, Typst, PDF"
 date: 2023-10-10
 
 bibliography: bibliography.bib  
-csl: https://www.zotero.org/styles/apa
+csl: apa.csl
 citeproc: true
 
 format:
