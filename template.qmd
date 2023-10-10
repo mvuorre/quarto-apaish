@@ -1,5 +1,6 @@
 ---
-title: APA7-ish Quarto Typst PDF template
+title: APA7ish Quarto Typst PDF template
+runninghead: APA7ish
 
 author:
   - name: Norah Jones

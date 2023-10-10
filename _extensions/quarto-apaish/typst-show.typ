@@ -16,6 +16,9 @@
 $if(title)$
   title: [$title$],
 $endif$
+$if(runninghead)$
+  runninghead: [$runninghead$],
+$endif$
 $if(by-author)$
   authors: (
 $for(by-author)$

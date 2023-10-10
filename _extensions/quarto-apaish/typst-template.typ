@@ -12,6 +12,7 @@
 
 #let article(
   title: none,
+  runninghead: none,
   authors: none,
   date: none,
   abstract: none,
@@ -31,6 +32,19 @@
     paper: paper,
     margin: margin,
     numbering: "1",
+    number-align: bottom + center,
+    header-ascent: 0%,
+    header: locate(
+        loc => if [#loc.page()] == [1] {
+            []
+        } else {
+            align(
+              left + horizon,
+              runninghead
+            )
+        }
+    )
+    
   )
   set par(justify: true)
   set text(lang: lang,
