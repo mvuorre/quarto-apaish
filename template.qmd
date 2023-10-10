@@ -25,6 +25,7 @@ affiliations:
 abstract: |
   This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
 keywords: "Template, APA, Typst, PDF"
+date: 2023-10-10
 
 bibliography: bibliography.bib  
 csl: https://www.zotero.org/styles/apa
@@ -34,7 +35,7 @@ format:
   quarto-apaish-typst: 
     toc: false
     columns: 2
-    fontsize: 11pt
+    fontsize: 10pt
     papersize: a4
     mainfont: Libertinus
     section-numbering: "" # https://typst.app/docs/reference/meta/numbering/
