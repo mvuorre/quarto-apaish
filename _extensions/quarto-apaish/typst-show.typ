@@ -19,19 +19,38 @@ $endif$
 $if(runninghead)$
   runninghead: [$runninghead$],
 $endif$
+
 $if(by-author)$
   authors: (
 $for(by-author)$
 $if(it.name.literal)$
     ( name: [$it.name.literal$],
-      affiliation: [$for(it.affiliations)$$it.name$$if(it.department)$, $it.department$$endif$$sep$\ $endfor$],
+      corresponding: [$it.corresponding$],
+      affiliations: [
+        $for(it.affiliations)$
+          $if(it.id)$$it.id$$endif$$sep$, 
+        $endfor$
+      ],
       email: [$it.email$],
       orcid: [$it.orcid$],
-      url: [$it.url$] ),
+      url: [$it.url$] 
+    ),
 $endif$
 $endfor$
     ),
 $endif$
+
+$if(affiliations)$
+  affiliations: (
+    $for(affiliations)$
+      (id: [$it.id$],
+       name: [$it.name$],
+       department: [$it.department$],
+       string: [$if(it.department)$$it.department$\ $endif$$it.name$]),
+    $endfor$
+),
+$endif$
+
 $if(date)$
   date: [$date$],
 $endif$

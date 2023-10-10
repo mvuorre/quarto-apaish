@@ -14,10 +14,11 @@
   title: none,
   runninghead: none,
   authors: none,
+  affiliations: none,
   date: none,
   abstract: none,
   cols: 1,
-  margin: (x: 0.75in, y: 0.75in),
+  margin: (x: 0.75in, y: 1.25in),
   paper: "us-letter",
   lang: "en",
   region: "US",
@@ -54,31 +55,33 @@
   set heading(numbering: sectionnumbering)
 
   if title != none {
-    align(center)[#block(inset: 2em)[
+    align(center)[#block(inset: 2em, below: 0em)[
       #text(weight: "bold", size: 1.5em)[#title]
     ]]
   }
 
   if authors != none {
-    let count = authors.len()
-    let ncols = calc.min(count, 3)
-    grid(
-      columns: (1fr,) * ncols,
-      row-gutter: 1.5em,
-      ..authors.map(author =>
-          align(center)[
-            #text(weight: "semibold")[#author.name] \
-            #author.affiliation \
-            #author.email \
-            #author.orcid \
-            #author.url
-          ]
-      )
-    )
+    align(center)[
+      #block(inset: 10%, above: 0em, below: 0.5em)[
+        #for a in authors [
+          #text(weight: "medium", size: 1.25em)[#a.name]#super[#a.affiliations] \
+        ]
+      ]
+    ]
+  }
+  
+  if affiliations != none {
+    align(center)[
+      #block(inset: 10%, above: 0em, below: 0em)[
+        #for a in affiliations [
+          #super[#a.id] #a.string \
+        ]
+      ]
+    ]
   }
 
   if abstract != none {
-    block(inset: 10%, below: 2em)[
+    block(inset: 10%, above: 0em, below: 2em)[
       #abstract
       #if keywords != none {[
         #text(weight: "regular", style: "italic")[Keywords:] #h(0.25em) #keywords
