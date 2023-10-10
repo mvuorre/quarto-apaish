@@ -42,17 +42,32 @@ format:
 
 # Introduction
 
-This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
+This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
 
-## Markdown 
+## Level 2
 
-*Italics*, **bold**.
+Flush Left, Bold, Title Case Heading
 
-> Blockquotes
+### Level 3
+
+Flush Left, Bold Italic, Title Case Heading
+
+#### Level 4
+
+Indented, Bold, Title Case Heading, Ending With a Period. Text begins on the same line and continues as a regular paragraph.
+
+##### Level 5
+
+Indented, Bold Italic, Title Case Heading, Ending With a Period. Text begins on the same line and continues as a regular paragraph.
+
+## Markdown
+
+Markdown should be sufficient for formatting stuff: *Italics*, **bold**.
+
+> *Blockquotes*: This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
 
 - Lists
-
-1. Numbers
+  - Level 2 item
 
 # Methods
 
@@ -122,3 +137,4 @@ This document is a template demonstrating the Apaish format. This document is a 
 
 # Appendices
 
+Additional information.

@@ -68,3 +68,44 @@ $endif$
   cols: $if(columns)$$columns$$else$1$endif$,
   doc,
 )
+
+#show heading.where(
+  level: 1
+): it => block(width: 100%, below: 12pt)[
+  #set align(center)
+  #set text(1em, weight: "regular")
+  #strong(it.body)
+]
+
+#show heading.where(
+  level: 2
+): it => block(width: 100%, below: 12pt)[
+  #set align(left)
+  #set text(1em, weight: "bold")
+  #strong(it.body)
+]
+
+#show heading.where(
+  level: 3
+): it => block(width: 100%, below: 12pt)[
+  #set align(left)
+  #set text(1em, weight: "bold")
+  #emph(it.body)
+]
+
+#show heading.where(
+  level: 4
+): it => text(
+  size: 1em,
+  weight: "bold",
+  it.body + [.]
+)
+
+#show heading.where(
+  level: 5
+): it => text(
+  size: 1em,
+  weight: "bold",
+  style: "italic",
+  it.body + [.]
+)
