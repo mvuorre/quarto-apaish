@@ -5,16 +5,12 @@ runninghead: APA7ish
 author:
   - name: Norah Jones
 
-bibliography: test.bib
-citeproc: true
-
 format:
   quarto-apaish-typst: default
 ---
 
 [@cohenProblemUnitsCircumstance1999]
 
-# References
-
-::: {#refs}
-:::
+```{=typst} 
+#bibliography("test.bib", title: "References", style: "apa")
+```
