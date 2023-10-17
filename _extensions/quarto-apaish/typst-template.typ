@@ -1,33 +1,24 @@
-
-// This is an example typst template (based on the default template that ships
-// with Quarto). It defines a typst function named 'article' which provides
-// various customization options. This function is called from the 
-// 'typst-show.typ' file (which maps Pandoc metadata function arguments)
-//
-// If you are creating or packaging a custom typst template you will likely
-// want to replace this file and 'typst-show.typ' entirely. You can find 
-// documentation on creating typst templates and some examples here: 
-//   - https://typst.app/docs/tutorial/making-a-template/
-//   - https://github.com/typst/templates
+// Typst template
 
 #let article(
   title: none,
-  runninghead: none,
+  running-head: none,
   authors: none,
   affiliations: none,
   date: none,
   authornote: none,
   abstract: none,
+  keywords: none,
   cols: 1,
-  margin: (x: 0.75in, y: 1.25in),
+  margin: (x: 1in, y: 1in),
   paper: "us-letter",
   lang: "en",
   region: "US",
-  font: (),
-  fontsize: 11pt,
-  sectionnumbering: none,
+  font: ("Times New Roman"),
+  fontsize: 10pt,
+  leading: 1em,
+  spacing: 1em,
   toc: false,
-  keywords: none,
   doc,
 ) = {
 
@@ -37,15 +28,9 @@
     header-ascent: 50%,
     header: grid(
       columns: (1fr, 1fr),
-      align(left)[#runninghead],
+      align(left)[#running-head],
       align(right)[#counter(page).display()]
     )
-  )
-  
-  set par(
-    justify: true, 
-    leading: 0.55em, 
-    first-line-indent: 0.5in
   )
   
   set text(
@@ -53,10 +38,6 @@
     region: region,
     font: font,
     size: fontsize
-  )
-  
-  set heading(
-    numbering: sectionnumbering
   )
 
   if title != none {
@@ -94,9 +75,18 @@
     ]
   }
 
+  set par(
+    justify: true, 
+    leading: leading, 
+    first-line-indent: 0.5in
+  )
+
+  // Also "leading" space between paragraphs
+  show par: set block(spacing: spacing)
+
   if abstract != none {
     block(inset: 10%, above: 0em, below: 2em)[
-      #set par(first-line-indent: 0pt)
+      #set par(first-line-indent: 0pt, leading: leading)
       #abstract
       #if keywords != none {[
         #text(weight: "regular", style: "italic")[Keywords:] #h(0.25em) #keywords
@@ -113,9 +103,52 @@
     ]
   }
 
+  /* Redefine headings up to level 5 */
+  show heading.where(
+    level: 1
+  ): it => block(width: 100%, below: 12pt)[
+    #set align(center)
+    #set text(size: fontsize)
+    #it.body
+  ]
+
+  show heading.where(
+    level: 2
+  ): it => block(width: 100%, below: 12pt)[
+    #set align(left)
+    #set text(size: fontsize)
+    #it.body
+  ]
+
+  show heading.where(
+    level: 3
+  ): it => block(width: 100%, below: 12pt)[
+    #set align(left)
+    #set text(size: fontsize, style: "italic")
+    #it.body
+  ]
+
+  show heading.where(
+    level: 4
+  ): it => text(
+    size: 1em,
+    weight: "bold",
+    it.body + [.]
+  )
+
+  show heading.where(
+    level: 5
+  ): it => text(
+    size: 1em,
+    weight: "bold",
+    style: "italic",
+    it.body + [.]
+  )
+
   if cols == 1 {
     doc
   } else {
     columns(cols, doc)
   }
+  
 }

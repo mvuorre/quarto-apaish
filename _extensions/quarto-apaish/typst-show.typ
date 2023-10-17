@@ -1,16 +1,4 @@
-// Typst custom formats typically consist of a 'typst-template.typ' (which is
-// the source code for a typst template) and a 'typst-show.typ' which calls the
-// template's function (forwarding Pandoc metadata values as required)
-//
-// This is an example 'typst-show.typ' file (based on the default template  
-// that ships with Quarto). It calls the typst function named 'article' which 
-// is defined in the 'typst-template.typ' file. 
-//
-// If you are creating or packaging a custom typst template you will likely
-// want to replace this file and 'typst-template.typ' entirely. You can find
-// documentation on creating typst templates here and some examples here:
-//   - https://typst.app/docs/tutorial/making-a-template/
-//   - https://github.com/typst/templates
+// Map YAML options from .qmd source to Typst template
 
 #show: doc => article(
 
@@ -18,8 +6,8 @@ $if(title)$
   title: [$title$],
 $endif$
 
-$if(runninghead)$
-  runninghead: [$runninghead$],
+$if(running-head)$
+  running-head: [$running-head$],
 $endif$
 
 $if(authornote)$
@@ -84,63 +72,30 @@ $if(papersize)$
   paper: "$papersize$",
 $endif$
 
-$if(mainfont)$
-  font: ("$mainfont$",),
+$if(font)$
+  font: ("$font$",),
 $endif$
 
 $if(fontsize)$
   fontsize: $fontsize$,
 $endif$
 
+$if(leading)$
+  leading: $leading$,
+  spacing: $leading$,
+$endif$
+
+$if(spacing)$
+  spacing: $spacing$,
+$endif$
+
 $if(section-numbering)$
-  sectionnumbering: "$section-numbering$",
+  section-numbering: "$section-numbering$",
 $endif$
 
 $if(toc)$
   toc: $toc$,
 $endif$
-  cols: $if(columns)$$columns$$else$1$endif$,
+cols: $if(columns)$$columns$$else$1$endif$,
   doc,
-)
-
-/* Define up to level 5 headings here */
-#show heading.where(
-  level: 1
-): it => block(width: 100%, below: 12pt)[
-  #set align(center)
-  #set text(size: $fontsize$)
-  #it.body
-]
-
-#show heading.where(
-  level: 2
-): it => block(width: 100%, below: 12pt)[
-  #set align(left)
-  #set text(size: $fontsize$)
-  #it.body
-]
-
-#show heading.where(
-  level: 3
-): it => block(width: 100%, below: 12pt)[
-  #set align(left)
-  #set text(size: $fontsize$, style: "italic")
-  #it.body
-]
-
-#show heading.where(
-  level: 4
-): it => text(
-  size: 1em,
-  weight: "bold",
-  it.body + [.]
-)
-
-#show heading.where(
-  level: 5
-): it => text(
-  size: 1em,
-  weight: "bold",
-  style: "italic",
-  it.body + [.]
 )

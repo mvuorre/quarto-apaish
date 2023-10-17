@@ -1,6 +1,6 @@
 ---
 title: APA7ish Quarto Typst PDF template
-runninghead: APA7ish
+running-head: APA7ish
 
 author:
   - name: Norah Jones
@@ -23,22 +23,23 @@ affiliations:
     department: Some department
 
 abstract: |
-  This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
-  
-  This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
+  This document is a template demonstrating the Apaish format. 
+
+  Abstract can have multiple paragraphs.
 
 keywords: "Quarto, template, APA, Typst, PDF"
 authornote: |
   Author notes go here.
 
 format:
-  quarto-apaish-typst: 
-    fontsize: 10pt
+  quarto-apaish-typst: default
 ---
 
 # Introduction
 
-This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
+This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. 
+
+Second paragraph is indented by default. Second paragraph is indented by default. Second paragraph is indented by default. Second paragraph is indented by default.
 
 ## Level 2
 
