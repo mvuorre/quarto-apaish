@@ -13,6 +13,7 @@
 //   - https://github.com/typst/templates
 
 #show: doc => article(
+
 $if(title)$
   title: [$title$],
 $endif$
@@ -54,36 +55,47 @@ $if(affiliations)$
     $endfor$
   ),
 $endif$
+
 $if(date)$
   date: [$date$],
 $endif$
+
 $if(lang)$
   lang: "$lang$",
 $endif$
+
 $if(region)$
   region: "$region$",
 $endif$
+
 $if(abstract)$
   abstract: [$abstract$],
 $endif$
+
 $if(keywords)$
   keywords: [$keywords$],
 $endif$
+
 $if(margin)$
   margin: ($for(margin/pairs)$$margin.key$: $margin.value$,$endfor$),
 $endif$
+
 $if(papersize)$
   paper: "$papersize$",
 $endif$
+
 $if(mainfont)$
   font: ("$mainfont$",),
 $endif$
+
 $if(fontsize)$
   fontsize: $fontsize$,
 $endif$
+
 $if(section-numbering)$
   sectionnumbering: "$section-numbering$",
 $endif$
+
 $if(toc)$
   toc: $toc$,
 $endif$
@@ -91,28 +103,29 @@ $endif$
   doc,
 )
 
+/* Define up to level 5 headings here */
 #show heading.where(
   level: 1
 ): it => block(width: 100%, below: 12pt)[
   #set align(center)
-  #set text(1em, weight: "regular")
-  #strong(it.body)
+  #set text(size: $fontsize$)
+  #it.body
 ]
 
 #show heading.where(
   level: 2
 ): it => block(width: 100%, below: 12pt)[
   #set align(left)
-  #set text(1em, weight: "bold")
-  #strong(it.body)
+  #set text(size: $fontsize$)
+  #it.body
 ]
 
 #show heading.where(
   level: 3
 ): it => block(width: 100%, below: 12pt)[
   #set align(left)
-  #set text(1em, weight: "bold")
-  #emph(it.body)
+  #set text(size: $fontsize$, style: "italic")
+  #it.body
 ]
 
 #show heading.where(

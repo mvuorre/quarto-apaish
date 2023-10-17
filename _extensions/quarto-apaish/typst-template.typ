@@ -95,6 +95,7 @@
 
   if abstract != none {
     block(inset: 10%, above: 0em, below: 2em)[
+      #set par(first-line-indent: 0pt)
       #abstract
       #if keywords != none {[
         #text(weight: "regular", style: "italic")[Keywords:] #h(0.25em) #keywords
