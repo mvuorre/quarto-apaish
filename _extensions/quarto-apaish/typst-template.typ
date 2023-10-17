@@ -44,7 +44,8 @@
   
   set par(
     justify: true, 
-    leading: 0.55em
+    leading: 0.55em, 
+    first-line-indent: 0.5in
   )
   
   set text(
