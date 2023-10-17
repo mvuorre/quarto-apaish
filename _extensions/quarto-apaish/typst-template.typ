@@ -34,19 +34,12 @@
   set page(
     paper: paper,
     margin: margin,
-    numbering: "1",
-    number-align: bottom + center,
-    header-ascent: 0%,
-    header: locate(
-        loc => if [#loc.page()] == [1] {
-            []
-        } else {
-            align(
-              center + horizon,
-              runninghead
-            )
-        }
-    ),
+    header-ascent: 50%,
+    header: grid(
+      columns: (1fr, 1fr),
+      align(left)[#runninghead],
+      align(right)[#counter(page).display()]
+    )
   )
   
   set par(
