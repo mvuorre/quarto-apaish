@@ -32,7 +32,7 @@ $if(by-author)$
       name: [$it.name.literal$],
       corresponding: [
         $if(it.email)$
-          #footnote[Corresponding author: $it.name.literal$, $it.email$.]
+          #footnote(numbering: "a")[Corresponding author: $it.name.literal$, $it.email$.\ $authornote$]
         $endif$
       ],
       affiliations: [

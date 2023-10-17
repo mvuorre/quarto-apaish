@@ -62,7 +62,7 @@
   if title != none {
     align(center)[
       #block(inset: 2em, below: 0em)[
-        #text(weight: "bold", size: 1.5em)[#title]
+        #text(weight: "bold", size: fontsize)[#title]
       ]
     ]
   }
@@ -70,9 +70,16 @@
   if authors != none {
     align(center)[
       #block(inset: 10%, above: 0em, below: 0.5em)[
-        #for a in authors [
-          #text(weight: "medium", size: 1.25em)[#a.name]#super[#a.affiliations]#a.corresponding \
-        ]
+        #let alast = authors.pop()
+        #if authors.len() > 1 {
+          // If multiple authors, join appropriately
+          for a in authors [
+            #a.name#h(-0.15em)#super[#a.affiliations]#h(0.1em)#a.corresponding, 
+          ] + [and #alast.name#super[#alast.affiliations]#alast.corresponding]
+        } else {
+          // If only one author, format a string
+          [#alast.name#super[#alast.affiliations]#alast.corresponding]
+        }
       ]
     ]
   }
@@ -93,12 +100,6 @@
       #abstract
       #if keywords != none {[
         #text(weight: "regular", style: "italic")[Keywords:] #h(0.25em) #keywords
-      ]} \
-      #if date != none {[
-        #text(weight: "regular", style: "italic")[Date:] #h(0.25em) #date
-      ]} \
-      #if authornote != none {[
-        #text(weight: "regular", style: "italic")[Author note:] #h(0.25em) #authornote
       ]}
     ]
   }

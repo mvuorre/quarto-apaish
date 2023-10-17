@@ -4,37 +4,36 @@ runninghead: APA7ish
 
 author:
   - name: Norah Jones
-    email: sm@example.org
+    email: sm@example.org # Required for corresponding author
     affiliation:
-      - ref: a
-      - ref: b
+      - ref: 1
+      - ref: 2
   - name: John Hamm
     affiliation:
-      - ref: a
+      - ref: 1
+  - name: Third Author
+    affiliation:
+      - ref: 2
 
 affiliations:
-  - id: a
+  - id: 1
     name: University A
-  - id: b
+  - id: 2
     name: University B
     department: Some department
 
 abstract: |
   This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
+  
+  This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format. This document is a template demonstrating the Apaish format.
 
 keywords: "Quarto, template, APA, Typst, PDF"
-date: 2023-10-10
 authornote: |
-  Can include info here, like "This pre-print is not yet peer-reviewed."
+  Author notes go here.
 
 format:
   quarto-apaish-typst: 
-    toc: false
-    columns: 2
     fontsize: 10pt
-    papersize: a4
-    mainfont: Libertinus
-    section-numbering: ""
 ---
 
 # Introduction
@@ -86,7 +85,7 @@ pi / 3
 
 ## Tables
 
-Tables don't work particularly well.
+Typst tables are currently somewhat limited (<https://typst.app/docs/reference/layout/table/>).
 
 ```{r}
 #| label: tbl-1
@@ -96,7 +95,7 @@ Tables don't work particularly well.
 library(gt)
 mtcars[1:6, 1:6] |> 
   gt() |> 
-  tab_footnote("Note.", cells_column_labels(1))
+  tab_footnote("Footnote cell 1.", cells_column_labels(1))
 ```
 
 @tbl-1 shows what happens if you run `mtcars[1:6, 1:6]` in R [@R].
@@ -108,8 +107,8 @@ Figures are just fine.
 ```{r}
 #| label: fig-1
 #| fig-cap: Mtcars figure.
-#| fig-width: 4
-#| fig-height: 4
+#| fig-width: 8
+#| fig-height: 3
 #| echo: false
 
 plot(mtcars[, 3:5])
