@@ -96,6 +96,12 @@ $endif$
 $if(toc)$
   toc: $toc$,
 $endif$
-cols: $if(columns)$$columns$$else$1$endif$,
+
+$if(cols)$
+  cols: $cols$,
+$else$
+  cols: 1,
+$endif$
+  
   doc,
 )
