@@ -31,8 +31,7 @@ keywords: "Quarto, template, APA, Typst, PDF"
 authornote: |
   Author notes go here.
 
-format:
-  quarto-apaish-typst: default
+format: quarto-apaish-typst
 ---
 
 # Introduction
