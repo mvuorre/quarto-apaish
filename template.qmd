@@ -14,7 +14,7 @@ abstract:
 keywords:
 authornote:
 format: 
-  quarto-apaish-typst: default
+  apaish-typst: default
 ---
 
 ```{=typst} 

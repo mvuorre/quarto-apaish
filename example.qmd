@@ -32,8 +32,7 @@ authornote: |
   Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Felis donec et odio pellentesque.
 
 format: 
-  quarto-apaish-typst: 
-    keep-typ: true
+  apaish-typst: default
 ---
 
 Enim nec dui nunc mattis. Sed cras ornare arcu dui vivamus. Lorem mollis aliquam ut porttitor. Pellentesque habitant morbi tristique senectus. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. Mauris pharetra et ultrices neque ornare aenean. Viverra nam libero justo laoreet sit amet. Suscipit adipiscing bibendum est ultricies integer quis auctor.[^1]
