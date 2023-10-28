@@ -2,10 +2,13 @@
 
 [Quarto](https://quarto.org) extension for creating APA7-ish (American Psychological Association style, 7th edition) manuscripts in PDF format via [Typst](https://typst.app/docs).
 
-Two document modes (akin to man and doc [here](https://mirror.lyrahosting.com/CTAN/macros/latex/contrib/apa7/apa7.pdf)) are implemented. View the example documents at <https://github.com/mvuorre/quarto-apaish/releases/latest>: 
+Three document modes (akin to man, doc, and jou [here](https://mirror.lyrahosting.com/CTAN/macros/latex/contrib/apa7/apa7.pdf)) are implemented. View the example documents at <https://github.com/mvuorre/quarto-apaish/releases/latest>: 
 
 - [Manuscript](https://github.com/mvuorre/quarto-apaish/releases/latest/download/example-manuscript.pdf)
 - [Document](https://github.com/mvuorre/quarto-apaish/releases/latest/download/example-document.pdf)
+- [Journal](https://github.com/mvuorre/quarto-apaish/releases/latest/download/example-journal.pdf)
+
+"Manuscript" is the horrid "double-spaced everything on its own page" kind of document, "document" aims to be a basic LaTeX kind of one-column document, whereas "journal" is a two-column document similar to papers published in APA journals.
 
 ## Install
 
@@ -27,6 +30,12 @@ This creates a "[manuscript]((https://github.com/mvuorre/quarto-apaish/releases/
 
 ```yaml
 format: apaish-document-typst
+```
+
+And to create a "[journal](https://github.com/mvuorre/quarto-apaish/releases/latest/download/example-journal.pdf)" PDF (for preprints etc), specify
+
+```yaml
+format: apaish-journal-typst
 ```
 
 Quarto documents use YAML metadata to control the document output. See the [example .qmd file](https://github.com/mvuorre/quarto-apaish/blob/main/example.qmd) for examples.
