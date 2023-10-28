@@ -22,7 +22,7 @@ format:
 
 ## Use
 
-Quarto documents use YAML metadata to control the document output. Below is a list of useful YAML fields for quarto-apaish. See the [example .qmd file](https://github.com/mvuorre/quarto-apaish/blob/main/example.qmd) for examples.
+Quarto documents use YAML metadata to control the document output. See the [example .qmd file](https://github.com/mvuorre/quarto-apaish/blob/main/example.qmd) for examples.
 
 ### Tips
 
