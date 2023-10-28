@@ -18,7 +18,7 @@ Then, in your manuscript's Quarto source document, add the following YAML
 
 ```
 format: 
-  quarto-apaish-typst: default
+  apaish-typst: default
 ```
 
 ## Use
