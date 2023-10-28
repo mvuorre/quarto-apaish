@@ -11,3 +11,5 @@ Encoding: UTF-8
 
 RnwWeave: Knitr
 LaTeX: pdfLaTeX
+
+BuildType: Makefile

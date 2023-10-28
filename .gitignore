@@ -4,3 +4,5 @@
 *.typ
 template_files/
 example_files/
+*_cache
+tmp.png
