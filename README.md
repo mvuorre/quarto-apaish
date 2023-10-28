@@ -43,7 +43,7 @@ To add a reference list using Typst's native citation engine, add
 ```
 ````
 
-To the end (or where you think is appropriate in your manuscript.)
+To the end (or where you think is appropriate in your manuscript.) If you want it on a separate page, add `#linebreak()` on a separate line above the `#bibliography()` function call.
 
 ## Limitations
 
