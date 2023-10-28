@@ -13,8 +13,7 @@ affiliations:
 abstract:
 keywords:
 authornote:
-format: 
-  apaish-typst: default
+format: apaish-manuscript-typst
 ---
 
 ```{=typst} 

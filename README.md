@@ -2,9 +2,10 @@
 
 [Quarto](https://quarto.org) extension for creating APA7-ish (American Psychological Association style, 7th edition) manuscripts in PDF format via [Typst](https://typst.app/docs).
 
-View the example documents at <https://github.com/mvuorre/quarto-apaish/releases/latest>: 
+Two document modes (akin to man and doc [here](https://mirror.lyrahosting.com/CTAN/macros/latex/contrib/apa7/apa7.pdf)) are implemented. View the example documents at <https://github.com/mvuorre/quarto-apaish/releases/latest>: 
 
 - [Manuscript](https://github.com/mvuorre/quarto-apaish/releases/latest/download/example-manuscript.pdf)
+- [Document](https://github.com/mvuorre/quarto-apaish/releases/latest/download/example-document.pdf)
 
 ## Install
 
@@ -14,14 +15,19 @@ Use quarto-apaish in an existing Quarto project:
 quarto add mvuorre/quarto-apaish
 ```
 
-Then, in your manuscript's Quarto source document, add the following YAML
-
-```
-format: 
-  apaish-typst: default
-```
-
 ## Use
+
+In your manuscript's Quarto source document, add the following YAML
+
+```yaml
+format: apaish-manuscript-typst
+```
+
+This creates a "[manuscript]((https://github.com/mvuorre/quarto-apaish/releases/latest/download/example-manuscript.pdf))" PDF. To create a "[document](https://github.com/mvuorre/quarto-apaish/releases/latest/download/example-document.pdf)" PDF, specify
+
+```yaml
+format: apaish-document-typst
+```
 
 Quarto documents use YAML metadata to control the document output. See the [example .qmd file](https://github.com/mvuorre/quarto-apaish/blob/main/example.qmd) for examples.
 

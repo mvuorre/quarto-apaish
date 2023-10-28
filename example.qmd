@@ -5,6 +5,7 @@ running-head: Running head
 author:
   - name: Norah Jones
     email: sm@example.org
+    note: corresponding
     affiliation:
       - ref: 1
       - ref: 2
@@ -14,34 +15,28 @@ author:
   - name: Third Author
     affiliation:
       - ref: 2
-
 affiliations:
   - id: 1
-    name: University A
+    name: Department 1, University A
   - id: 2
-    name: University B
-    department: Department X
-
+    name: Department 2, University B
 abstract: |
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Sed adipiscing diam donec adipiscing tristique risus nec feugiat. Justo eget magna fermentum iaculis eu non. Tristique senectus et netus et malesuada fames ac turpis egestas. 
-  
-  Consequat ac felis donec et. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Tincidunt augue interdum velit euismod in pellentesque massa placerat duis. Ultricies mi quis hendrerit dolor magna eget est lorem. Morbi tristique senectus et netus et. Faucibus et molestie ac feugiat sed lectus vestibulum. Donec pretium vulputate sapien nec sagittis aliquam. Feugiat nibh sed pulvinar proin gravida hendrerit lectus a.
-
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Sed adipiscing diam donec adipiscing tristique risus nec feugiat. Justo eget magna fermentum iaculis eu non. Tristique senectus et netus et malesuada fames ac turpis egestas. Consequat ac felis donec et. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Tincidunt augue interdum velit euismod in pellentesque massa placerat duis. Ultricies mi quis hendrerit dolor magna eget est lorem. Morbi tristique senectus et netus et. Faucibus et molestie ac feugiat sed lectus vestibulum. Donec pretium vulputate sapien nec sagittis aliquam. Feugiat nibh sed pulvinar proin gravida hendrerit lectus a.
 keywords: "Lorem, ipsum, dolor, sit, amet"
 authornote: |
   Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Felis donec et odio pellentesque.
-
-format: 
-  apaish-typst: default
+format: apaish-document-typst
 ---
 
-Enim nec dui nunc mattis. Sed cras ornare arcu dui vivamus. Lorem mollis aliquam ut porttitor. Pellentesque habitant morbi tristique senectus. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. Mauris pharetra et ultrices neque ornare aenean. Viverra nam libero justo laoreet sit amet. Suscipit adipiscing bibendum est ultricies integer quis auctor.[^1]
+Enim nec dui nunc mattis. Sed cras ornare arcu dui vivamus. Lorem mollis aliquam ut porttitor. Pellentesque habitant morbi tristique senectus. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. 
 
-[^1]: A pellentesque sit amet porttitor eget dolor.
+Mauris pharetra et ultrices neque ornare aenean. Viverra nam libero justo laoreet sit amet. Suscipit adipiscing bibendum est ultricies integer quis auctor.
 
 ## Level 2 Heading
 
-Non consectetur a erat nam at lectus urna duis convallis. In vitae turpis massa sed elementum tempus egestas sed sed. Consectetur purus ut faucibus pulvinar elementum integer. Phasellus vestibulum lorem sed risus ultricies tristique. Nullam non nisi est sit amet facilisis magna. 
+Non consectetur a erat nam at lectus urna duis convallis. In vitae turpis massa sed elementum tempus egestas sed sed. Consectetur purus ut faucibus pulvinar elementum integer. Phasellus vestibulum lorem sed risus ultricies tristique. Nullam non nisi est sit amet facilisis magna.[^1]
+
+[^1]: A pellentesque sit amet porttitor eget dolor.
 
 ### Level 3 Heading
 

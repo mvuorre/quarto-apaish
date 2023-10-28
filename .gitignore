@@ -1,7 +1,7 @@
 .Rproj
 .Rproj.user
 **/*.pdf
-*.typ
+example.typ
 template_files/
 example_files/
 *_cache
