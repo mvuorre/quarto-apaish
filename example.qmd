@@ -93,6 +93,31 @@ knitr::kable(mtcars[1:3, 1:3])
 
 @tbl-1 shows what happens if you run `mtcars[1:3, 1:3]` in R [@R].
 
+<!-- Example complicated table as figure -->
+
+```{r}
+#| cache: true
+#| message: false
+#| echo: false
+
+library(gt)
+library(tidyverse)
+gtcars |>
+  slice_head(n = 2, by = ctry_origin) |>
+  filter(ctry_origin %in% c("Italy", "Japan")) |> 
+  select(1:6, ctry_origin) |> 
+  group_by(ctry_origin) |>
+  gt() |> 
+  opt_stylize(style = 6) |> 
+  gtsave("tmp.png")
+```
+
+![Image of a gt() table](tmp.png){#tbl-tmp width=50%}
+
+Any table can be included as a figure (@tbl-tmp) and will even show with correct "Table" prefixes when referenced.
+
+<!-- End example -->
+
 ## Figures
 
 Figures are just fine.

@@ -26,3 +26,21 @@ format:
 Quarto documents use YAML metadata to control the document output. See the [example .qmd file](https://github.com/mvuorre/quarto-apaish/blob/main/example.qmd) for examples.
 
 ### Tips
+
+#### Reference list
+
+To add a reference list using Typst's native citation engine, add
+
+````
+```{=typst} 
+#bibliography("bibliography.bib", title: "References", style: "apa")
+```
+````
+
+To the end (or where you think is appropriate in your manuscript.)
+
+## Limitations
+
+Typst, and its Quarto integration are in early beta and changes are to be expected. 
+
+Typst has limited support for tables. A suggested workaround for anything but the most basic tables is to convert your tables to figures, either figuratively speaking or literally. An example of literally converting a table to a figure is shown in the example document.
