@@ -1,2 +1,6 @@
 .Rproj
 .Rproj.user
+**/*.pdf
+*.typ
+template_files/
+example_files/
