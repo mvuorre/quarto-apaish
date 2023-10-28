@@ -2,7 +2,9 @@
 
 [Quarto](https://quarto.org) extension for creating APA7-ish (American Psychological Association style, 7th edition) manuscripts in PDF format via [Typst](https://typst.app/docs).
 
-View the example documents at <https://github.com/mvuorre/quarto-apaish/releases/latest>:
+View the example documents at <https://github.com/mvuorre/quarto-apaish/releases/latest>: 
+
+- [Manuscript](https://github.com/mvuorre/quarto-apaish/releases/latest/download/example-manuscript.pdf)
 
 ## Install
 
