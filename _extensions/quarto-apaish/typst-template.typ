@@ -5,20 +5,19 @@
   running-head: none,
   authors: none,
   affiliations: none,
-  date: none,
   authornote: none,
   abstract: none,
   keywords: none,
-  cols: 1,
-  margin: (x: 1in, y: 1in),
+  margin: (x: 2.5cm, y: 2.5cm),
   paper: "us-letter",
-  lang: "en",
-  region: "US",
   font: ("Times New Roman"),
-  fontsize: 10pt,
-  leading: 1em,
-  spacing: 1em,
+  fontsize: 12pt,
+  leading: 2em,
+  spacing: 2em,
+  first-line-indent: 1.25cm,
   toc: false,
+  cols: 1,
+  mode: none,
   doc,
 ) = {
 
@@ -33,16 +32,23 @@
     )
   )
   
+  set par(
+    justify: false, 
+    leading: leading,
+    first-line-indent: first-line-indent
+  )
+
+  // Also "leading" space between paragraphs
+  show par: set block(spacing: spacing)
+
   set text(
-    lang: lang,
-    region: region,
     font: font,
     size: fontsize
   )
 
   if title != none {
     align(center)[
-      #block(inset: 2em, below: 0em)[
+      #v(8em)#block(below: leading*2)[
         #text(weight: "bold", size: fontsize)[#title]
       ]
     ]
@@ -50,16 +56,16 @@
 
   if authors != none {
     align(center)[
-      #block(inset: 10%, above: 0em, below: 0.5em)[
+      #block(above: leading, below: leading)[
         #let alast = authors.pop()
         #if authors.len() > 1 {
           // If multiple authors, join appropriately
           for a in authors [
-            #a.name#h(-0.15em)#super[#a.affiliations]#h(0.1em)#a.corresponding, 
-          ] + [and #alast.name#super[#alast.affiliations]#alast.corresponding]
+            #a.name#h(-0.15em)#super[#a.affiliations]#h(0.1em), 
+          ] + [and #alast.name#super[#alast.affiliations]]
         } else {
           // If only one author, format a string
-          [#alast.name#super[#alast.affiliations]#alast.corresponding]
+          [#alast.name#super[#alast.affiliations]]
         }
       ]
     ]
@@ -67,7 +73,7 @@
   
   if affiliations != none {
     align(center)[
-      #block(inset: 10%, above: 0em, below: 0em)[
+      #block(above: leading, below: leading)[
         #for a in affiliations [
           #super[#a.id] #a.string \
         ]
@@ -75,38 +81,34 @@
     ]
   }
 
-  set par(
-    justify: true, 
-    leading: leading, 
-    first-line-indent: 0.5in
-  )
-
-  // Also "leading" space between paragraphs
-  show par: set block(spacing: spacing)
-
-  if abstract != none {
-    block(inset: 10%, above: 0em, below: 2em)[
-      #set par(first-line-indent: 0pt, leading: leading)
-      #abstract
-      #if keywords != none {[
-        #text(weight: "regular", style: "italic")[Keywords:] #h(0.25em) #keywords
-      ]}
-    ]
-  }
-
-  if toc {
-    block(above: 0em, below: 2em)[
-    #outline(
-      title: auto,
-      depth: none
-    );
-    ]
-  }
+    align(
+      bottom,
+      [
+        #align(center, text(weight: "bold", "Author note"))
+        #text(authornote)
+        // todo map the corresponding author(s) to here
+        Correspondence concerning this article should be addressed to 
+          #authors.at(0).name, #authors.at(0).email.
+      ]
+    )
+    pagebreak()
+    
+    if abstract != none {
+      block(above: 0em, below: 2em)[
+        #align(center, text(weight: "bold", "Abstract"))
+        #set par(first-line-indent: 0pt, leading: leading)
+        #abstract
+        #if keywords != none {[
+          #text(weight: "regular", style: "italic")[Keywords:] #h(0.25em) #keywords
+        ]}
+      ]
+    }
+    pagebreak()
 
   /* Redefine headings up to level 5 */
   show heading.where(
     level: 1
-  ): it => block(width: 100%, below: 12pt)[
+  ): it => block(width: 100%, below: leading, above: leading)[
     #set align(center)
     #set text(size: fontsize)
     #it.body
@@ -114,7 +116,7 @@
 
   show heading.where(
     level: 2
-  ): it => block(width: 100%, below: 12pt)[
+  ): it => block(width: 100%, below: leading, above: leading)[
     #set align(left)
     #set text(size: fontsize)
     #it.body
@@ -122,7 +124,7 @@
 
   show heading.where(
     level: 3
-  ): it => block(width: 100%, below: 12pt)[
+  ): it => block(width: 100%, below: leading, above: leading)[
     #set align(left)
     #set text(size: fontsize, style: "italic")
     #it.body
@@ -148,7 +150,7 @@
   if cols == 1 {
     doc
   } else {
-    columns(cols, doc)
+    columns(cols, gutter: 4%, doc)
   }
   
 }
