@@ -25,7 +25,7 @@ abstract: |
 keywords: "Lorem, ipsum, dolor, sit, amet"
 authornote: |
   Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Felis donec et odio pellentesque.
-format: apaish-document-typst
+format: apaish-manuscript-typst
 ---
 
 Enim nec dui nunc mattis. Sed cras ornare arcu dui vivamus. Lorem mollis aliquam ut porttitor. Pellentesque habitant morbi tristique senectus. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. 
