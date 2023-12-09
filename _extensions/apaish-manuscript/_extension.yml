@@ -1,5 +1,5 @@
-title: Quarto-apaish
-author: Matti Vuorre
+title: A Latent Class Analysis of Black Adolescent Student Experiences
+author: Erica L. Tartt 
 version: 0.1.0
 quarto-required: ">=1.4.0"
 contributes:
@@ -8,3 +8,4 @@ contributes:
       template-partials:
         - typst-template.typ
         - typst-show.typ
+        
