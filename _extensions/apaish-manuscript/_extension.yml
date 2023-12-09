@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 title: A Latent Class Analysis of Black Adolescent Student Experiences
 author: Erica L. Tartt 
 version: 0.1.0
@@ -9,3 +10,5 @@ contributes:
         - typst-template.typ
         - typst-show.typ
         
+=======
+>>>>>>> Stashed changes
