@@ -1,4 +1,4 @@
-all: manuscript document
+all: manuscript document journal
 
 manuscript: example.qmd
 	quarto render example.qmd --to apaish-manuscript-typst \
