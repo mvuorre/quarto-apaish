@@ -25,6 +25,8 @@ abstract: |
 keywords: "Lorem, ipsum, dolor, sit, amet"
 authornote: |
   Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Felis donec et odio pellentesque.
+bibliography: bibliography.bib
+bibliographystyle: apa
 format: apaish-document-typst
 ---
 
@@ -149,7 +151,3 @@ You can also embed figures from files using Markdown syntax: `![Caption](Thomas_
 # Discussion
 
 Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Luctus venenatis lectus magna fringilla. Posuere ac ut consequat semper viverra nam libero justo laoreet. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Id diam vel quam elementum pulvinar etiam non quam lacus. Nisl pretium fusce id velit ut. Risus sed vulputate odio ut enim blandit volutpat maecenas. Massa ultricies mi quis hendrerit dolor magna eget est. Dignissim convallis aenean et tortor at. Tempor id eu nisl nunc mi ipsum faucibus vitae. Tristique et egestas quis ipsum suspendisse ultrices.
-
-```{=typst} 
-#bibliography("bibliography.bib", title: "References", style: "apa")
-```
