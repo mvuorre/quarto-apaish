@@ -24,7 +24,7 @@ abstract: |
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Sed adipiscing diam donec adipiscing tristique risus nec feugiat. Justo eget magna fermentum iaculis eu non. Tristique senectus et netus et malesuada fames ac turpis egestas. Consequat ac felis donec et. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Tincidunt augue interdum velit euismod in pellentesque massa placerat duis. Ultricies mi quis hendrerit dolor magna eget est lorem. Morbi tristique senectus et netus et. Faucibus et molestie ac feugiat sed lectus vestibulum. Donec pretium vulputate sapien nec sagittis aliquam. Feugiat nibh sed pulvinar proin gravida hendrerit lectus a.
 keywords: "Lorem, ipsum, dolor, sit, amet"
 authornote: |
-  Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Felis donec et odio pellentesque.
+  This is an author note.
 bibliography: bibliography.bib
 bibliographystyle: apa
 format: apaish-document-typst
@@ -38,7 +38,7 @@ Mauris pharetra et ultrices neque ornare aenean. Viverra nam libero justo laoree
 
 Non consectetur a erat nam at lectus urna duis convallis. In vitae turpis massa sed elementum tempus egestas sed sed. Consectetur purus ut faucibus pulvinar elementum integer. Phasellus vestibulum lorem sed risus ultricies tristique. Nullam non nisi est sit amet facilisis magna.[^1]
 
-[^1]: A pellentesque sit amet porttitor eget dolor.
+[^1]: This is a footnote.
 
 ### Level 3 Heading
 
