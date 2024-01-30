@@ -63,10 +63,23 @@ Markdown should be sufficient for formatting stuff: *Italics*, **bold**.
 
 ## Math
 
-It is not yet clear how to best enter math in Quarto-Typst, but apparently one can write LaTeX math inline ($Y = \alpha + \beta X$) and Typst math in blocks:
+Apparently latex math works both inline ($Y = \alpha + \beta X$) and in display blocks:
 
 $$
-Y = alpha + beta X
+\begin{align}
+Y &= \alpha + \beta X \\
+\begin{bmatrix}
+  \alpha \\ \beta
+\end{bmatrix} &\sim MVN\left(
+  \begin{bmatrix}
+    0 \\ 0
+  \end{bmatrix},
+  \begin{pmatrix}
+    \tau_0 \  \\ 
+    \rho_{01} \ &\tau_1
+  \end{pmatrix}
+\right).
+\end{align}
 $$ {#eq-1}
 
 The latter are easily cited (e.g. @eq-1).
