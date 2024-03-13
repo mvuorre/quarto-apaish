@@ -62,17 +62,24 @@
     align(center)[
       #block(below: leading*2)[
         #set text(size: fontsize*1.3)
-        #let alast = authors.pop()
-        #if authors.len() > 1 {
-          // If multiple authors, join appropriately
+        // Formatting depends on N authors 1, 2, or 2+
+        #if authors.len() > 2 {
           for a in authors [
-            #a.name#super[#a.affiliations], 
-          ] + [and #alast.name#super[#alast.affiliations]]
-        } else {
-          // If only one author, format a string
-          [#alast.name#super[#alast.affiliations]]
+            #a.name#super[#a.affiliations]#if a.note == "true" [#footnote(numbering: "*", [Send correspondence to #a.name, #a.email. #authornote])]#if a!=authors.at(authors.len()-1) [#if a==authors.at(authors.len()-2) [, and] else [,]]
+          ]
+        } 
+        #if authors.len() == 2 {
+          for a in authors [
+            #a.name#super[#a.affiliations]#if a.note == "true" [#footnote(numbering: "*", [Send correspondence to #a.name, #a.email. #authornote])]#if a!=authors.at(authors.len()-1) [and]
+          ]
+        }
+        #if authors.len() == 1 {
+          for a in authors [
+            #a.name#super[#a.affiliations]#if a.note == "true" [#footnote(numbering: "*", [Send correspondence to #a.name, #a.email. #authornote])]
+          ]
         }
       ]
+      #counter(footnote).update(0)
     ]
   }
   
@@ -96,18 +103,6 @@
       ]}
     ]
   }
-
-  place(
-    bottom, float: true, clearance: 1em,
-    [
-      #line(length: 100%, stroke: 0.5pt)
-      #set text(size: fontsize*0.85)
-      #authornote
-      // todo: The corresponding YAML field doesn't seem to work, so hacky
-      Correspondence concerning this article should be addressed to
-      #for a in authors [#if a.note == "true" [#a.name, #a.email]].
-    ]
-  )
 
   /* Redefine headings up to level 5 */
   show heading.where(
