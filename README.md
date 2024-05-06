@@ -23,19 +23,23 @@ quarto add mvuorre/quarto-apaish
 In your manuscript's Quarto source document, add the following YAML
 
 ```yaml
-format: apaish-manuscript-typst
+format: apaish-typst
 ```
 
 This creates a "[manuscript]((https://github.com/mvuorre/quarto-apaish/releases/latest/download/example-manuscript.pdf))" PDF. To create a "[document](https://github.com/mvuorre/quarto-apaish/releases/latest/download/example-document.pdf)" PDF, specify
 
 ```yaml
-format: apaish-document-typst
+format: 
+  apaish-typst:
+    documentmode: doc
 ```
 
 And to create a "[journal](https://github.com/mvuorre/quarto-apaish/releases/latest/download/example-journal.pdf)" PDF (for preprints etc), specify
 
 ```yaml
-format: apaish-journal-typst
+format: 
+  apaish-typst:
+    documentmode: jou
 ```
 
 Quarto documents use YAML metadata to control the document output. See the [example .qmd file](https://github.com/mvuorre/quarto-apaish/blob/main/example.qmd) for examples.

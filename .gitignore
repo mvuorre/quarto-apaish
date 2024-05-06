@@ -6,3 +6,4 @@ template_files/
 example_files/
 *_cache
 tmp.png
+/.luarc.json

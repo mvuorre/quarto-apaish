@@ -5,7 +5,6 @@ running-head: Running head
 author:
   - name: Norah Jones
     email: sm@example.org
-    note: corresponding
     affiliation:
       - ref: 1
       - ref: 2
@@ -27,7 +26,9 @@ authornote: |
   This is an author note.
 bibliography: bibliography.bib
 bibliographystyle: apa
-format: apaish-document-typst
+format: 
+  apaish-typst: 
+    documentmode: doc
 ---
 
 Enim nec dui nunc mattis. Sed cras ornare arcu dui vivamus. Lorem mollis aliquam ut porttitor. Pellentesque habitant morbi tristique senectus. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. 
@@ -102,8 +103,6 @@ knitr::kable(mtcars[1:3, 1:3])
 
 @tbl-1 shows what happens if you run `mtcars[1:3, 1:3]` in R [@R].
 
-<!-- Example complicated table as figure -->
-
 ```{r}
 #| cache: true
 #| message: false
@@ -124,8 +123,6 @@ gtcars |>
 ![Image of a gt() table](tmp.png){#tbl-tmp width=50%}
 
 Any table can be included as a figure (@tbl-tmp) and will even show with correct "Table" prefixes when referenced.
-
-<!-- End example -->
 
 ## Figures
 

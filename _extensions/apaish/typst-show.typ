@@ -1,4 +1,4 @@
-#show: doc => article(
+#show: document => $documentmode$(
 $if(title)$
   title: "$title$",
 $endif$
@@ -10,8 +10,7 @@ $if(by-author)$
     $for(by-author)$(
       name: "$it.name.literal$",
       affiliations: "$for(it.affiliations)$$if(it.id)$$it.id$$endif$$sep$,$endfor$",
-      email: [$it.email$],
-      note: "$it.note$"
+      email: [$it.email$]
     ),
     $endfor$
   ),
@@ -57,5 +56,5 @@ $endif$
 $if(cols)$
   cols: $cols$,
 $endif$
-  doc,
+  document,
 )

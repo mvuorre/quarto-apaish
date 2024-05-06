@@ -1,13 +1,18 @@
-all: manuscript document journal
+SOURCE = example
 
-manuscript: example.qmd
-	quarto render example.qmd --to apaish-manuscript-typst \
-	--output example-manuscript.pdf
+all: man doc jou
 
-document: example.qmd
-	quarto render example.qmd --to apaish-document-typst \
-	--output example-document.pdf
+man: $(SOURCE).qmd
+	quarto render $< --to apaish-typst \
+		--output $(SOURCE)-$@.pdf \
+		-M documentmode:$@
 
-journal: example.qmd
-	quarto render example.qmd --to apaish-journal-typst \
-	--output example-journal.pdf
+doc: $(SOURCE).qmd
+	quarto render $< --to apaish-typst \
+		--output $(SOURCE)-$@.pdf \
+		-M documentmode:$@
+
+jou: $(SOURCE).qmd
+	quarto render $< --to apaish-typst \
+		--output $(SOURCE)-$@.pdf \
+		-M documentmode:$@
