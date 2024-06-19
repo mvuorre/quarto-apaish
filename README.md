@@ -1,5 +1,7 @@
 # APA7ish Quarto Typst PDF template
 
+**NOTE: I don't plan to develop this further, instead take a look at <https://github.com/mvuorre/quarto-preprint> for a more comprehensive & Quarto-compliant extension.**
+
 [Quarto](https://quarto.org) extension for creating APA7-ish (American Psychological Association style, 7th edition) manuscripts in PDF format via [Typst](https://typst.app/docs). (See e.g. <https://github.com/wjschne/apaquarto> for a LaTeX PDF template.)
 
 Three document modes (akin to man, doc, and jou [here](https://mirror.lyrahosting.com/CTAN/macros/latex/contrib/apa7/apa7.pdf)) are implemented. View the example documents at <https://github.com/mvuorre/quarto-apaish/releases/latest>: 
